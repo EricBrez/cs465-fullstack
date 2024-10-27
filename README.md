@@ -2,23 +2,24 @@
 
 ## Architecture
 #### Compare and contrast the types of frontend development you used in your full stack project, including Express HTML, JavaScript, and the single-page application (SPA).
-Test Answer
+The application overall is split into two pieces, the customer facing Express application and the administrative Angular Single Page Application (SPA). On the SPA side of things, the entire page is loaded at once and dynamically updates based on actions taken. The trip cards, the navigation bar, the forms, and the different types of buttons (add trip, edit trip) all are written using their own components for defining the objects and their functions. They all house their own HTML files and their own Typescript files for defining functionality. On the Express side, the pages have their own HTML but the repetitive parts are handled with handlebars to display dynamic information such as the trips that are available. It uses controllers and routers to define how each user action will direct the system to a different
 
 #### Why did the backend use a NoSQL MongoDB database?
-Test Answer
+The benefit of using a NoSQL database with MongoDB for this web application in particular is that NoSQL dbs store data in non-relational documents, rather than relational tables which makes it better for non-structured data such as JSON files, which is how we store the trips and the user object information. NoSQL databases also allow for dynamic schemas to accomodate that unstructured data.
 
 ## Functionality
 #### How is JSON different from Javascript and how does JSON tie together the frontend and backend development pieces?
-Test Answer
+JSON is the format and structure of the data storage that is used for the frontend. Javascript processes actions taken by user, retrieves information from the databases, and returns it to the user. Javascript is also used to designate the structure of the JSON objects and how to store them.
 
 #### Provide instances in the full stack process when you refactored code to improve functionality and efficiencies, and name the benefits that come from reusable user interface (UI) components.
-Test Answer
+The first refactoring was implementing the MVC routing at the beginning of the process. This laid the foundation for how the rest of the program would be designed for both the Express customer facing application and the aministrative SPA by laying down the basis for how the application would run, using routes and controllers to manage various functionalities. This proved to be a strong separation of concerns approach to building so that no one aspect was too overburdened with processes.
 
 ## Testing
 #### Methods for request and retrieval necessitate various types of API testing of endpoints, in addition to the difficulties of testing with added layers of security. Explain your understanding of methods, endpoints, and security in a full stack application.
-Test Answer
+Utilizing methods in a full-stack application is very similar to using them anywhere else in programming. They serve as, let's call them equations, they have their own variables, you plug in data and the method runs the equation to process that data and either provide in an output or initiate another chain of events by triggering more methods. It is a way to limit repetative code, but testing requires making sure they work as expected every time. A good way of testing this for a web application is by writing endpoints into your code. Essentially, endpoints are addresses to specific functions, in the travlr program, you can see them whenever you make a request to:
+{{url}}/api/login or {{url}]/api/register as two examples. The last words "/login" and "/register" specifically call the login and register functions respectively making it more simple to test using a program like postman that can make various types of requests to a server one at a time with all the variables laid out at once. Testing by making function calls when security has already been implemented in the program can become difficult because the program will still require you to have authentication, this is another way that programs like postman come in handy, because you can set a token that allows you access (as long as it meets your security standards which means you won't have to log in for every call you make.
 
 
 ## Reflection
 #### How has this course helped you in reaching your professional goals? What skills have you learned, developed, or mastered in this course to help you become a more marketable candidate in your career field?
-Test Answer
+This course has definitely been tough, despite the class being led by guides to implement different parts of the program in a systematic way, I came into this class with no experience with javascrupt, html, or typescript so I was trying to learn things as I went, which is part of the developer experience but still complex and can be tough. Especially when it came to debugging and I had only been guessing what the words and characters I was putting together meant. This led to a bunch of exhausting and often unhelpful external research, also part of the experience, that usually made things worse and rarely fixed things. And lets be fair, I didn't even finish the program. It broke down in the security section which made it impossible to test the final result entirely because the program wouldn't let you past the authentication phase. This did give me a lot of experience with the struggles of the profession, which is not a bad thing to have going into it. 
